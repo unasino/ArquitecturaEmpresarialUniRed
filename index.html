@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura Organizacional - Unirred</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .accordion-button {
+            font-weight: bold;
+        }
+        .employee-info {
+            margin-left: 20px;
+        }
+        .employee-info p {
+            margin: 5px 0;
+        }
+        .jumbotron {
+            background-image: linear-gradient(120deg, #1e9b00, #f5d300); /* Verde y amarillo de UNAS */
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+        .employee-card {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .employee-card:hover {
+            background-color: #e2e6ea;
+        }
+        .employee-card img {
+            margin-right: 15px;
+        }
+        .card-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .card-body {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 0 0 0.25rem 0.25rem;
+        }
+        .modal-header {
+            background-color: #343a40;
+            color: #fff;
+        }
+        .modal-footer {
+            border-top: 1px solid #dee2e6;
+        }
+        .description {
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .profile-pic {
+                width: 80px;
+                height: 80px;
+            }
+            .employee-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .employee-card img {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="accordion" id="organizationStructure">
+            <!-- Área de Desarrollo y Producción -->
+            <div class="card">
+                <div class="card-header" id="headingDevProd">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link accordion-button" type="button" data-toggle="collapse" data-target="#collapseDevProd" aria-expanded="false" aria-controls="collapseDevProd">
+                            <i class="fas fa-cogs"></i> Desarrollo y Producción
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseDevProd" class="collapse" aria-labelledby="headingDevProd" data-parent="#organizationStructure">
+                    <div class="card-body">
+                        <p class="description">Esta área se encarga del desarrollo y producción de la plataforma Unirred, asegurando que todos los procesos tecnológicos estén en funcionamiento y optimizados.</p>
+                        <!-- Empleado: Jefferson Mendoza -->
+                        <div class="employee-card" data-toggle="modal" data-target="#jeffersonMendozaModal">
+                            <img src="https://i.ibb.co/6WZL9tj/image.png" alt="Jefferson Mendoza" class="profile-pic">
+                            <div>
+                                <h6>Jefferson Mendoza</h6>
+                                <p>Desarrollador Principal</p>
+                            </div>
+                        </div>
+                        <!-- Empleado: Jorge L. -->
+                        <div class="employee-card" data-toggle="modal" data-target="#jorgeLModal">
+                            <img src="https://i.ibb.co/njR367Y/image.png" alt="Jorge L." class="profile-pic">
+                            <div>
+                                <h6>Jorge L.</h6>
+                                <p>Director de Tecnología</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Área de Imagen Pública y Marketing -->
+            <div class="card">
+                <div class="card-header" id="headingMarketing">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link accordion-button" type="button" data-toggle="collapse" data-target="#collapseMarketing" aria-expanded="false" aria-controls="collapseMarketing">
+                            <i class="fas fa-bullhorn"></i> Imagen Pública y Marketing
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseMarketing" class="collapse" aria-labelledby="headingMarketing" data-parent="#organizationStructure">
+                    <div class="card-body">
+                        <p class="description">Esta área se enfoca en la promoción y gestión de la imagen de Unirred, asegurando una comunicación efectiva con la comunidad universitaria.</p>
+                        <!-- Empleado: Pixel Web -->
+                        <div class="employee-card" data-toggle="modal" data-target="#pixelWebModal">
+                            <img src="https://i.ibb.co/4gFT9gD/image.png" alt="Pixel Web" class="profile-pic">
+                            <div>
+                                <h6>Pixel Web</h6>
+                                <p>Director de Marketing</p>
+                            </div>
+                        </div>
+                        <!-- Empleado: Genuini Company -->
+                        <div class="employee-card" data-toggle="modal" data-target="#genuiniCompanyModal">
+                            <img src="https://i.ibb.co/7vGNh6D/image.png" alt="Genuini Company" class="profile-pic">
+                            <div>
+                                <h6>Genuini Company</h6>
+                                <p>Especialista en Marketing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Área de Secretaría General -->
+            <div class="card">
+                <div class="card-header" id="headingSecGen">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link accordion-button" type="button" data-toggle="collapse" data-target="#collapseSecGen" aria-expanded="false" aria-controls="collapseSecGen">
+                            <i class="fas fa-user-tie"></i> Secretaría General
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseSecGen" class="collapse" aria-labelledby="headingSecGen" data-parent="#organizationStructure">
+                    <div class="card-body">
+                        <p class="description">La Secretaría General gestiona la administración de Unirred, coordinando entre áreas y gestionando los recursos.</p>
+                        <!-- Empleado: Denis Polinar -->
+                        <div class="employee-card" data-toggle="modal" data-target="#denisPolinarModal">
+                            <img src="https://i.ibb.co/zFffqKG/image.png" alt="Denis Polinar" class="profile-pic">
+                            <div>
+                                <h6>Denis Polinar</h6>
+                                <p>Director General</p>
+                            </div>
+                        </div>
+                        <!-- Empleado: Juan David -->
+                        <div class="employee-card" data-toggle="modal" data-target="#juanDavidModal">
+                            <img src="https://i.ibb.co/sHHZXTY/image.png" alt="Juan David" class="profile-pic">
+                            <div>
+                                <h6>Juan David</h6>
+                                <p>Asistente Administrativo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales -->
+    <div class="modal fade" id="jeffersonMendozaModal" tabindex="-1" role="dialog" aria-labelledby="jeffersonMendozaModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="jeffersonMendozaModalLabel">Jefferson Mendoza</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.ibb.co/6WZL9tj/image.png" alt="Jefferson Mendoza" class="profile-pic mb-3">
+                    <p><strong>Nombre:</strong> Jefferson Mendoza</p>
+                    <p><strong>Cargo:</strong> Desarrollador Principal</p>
+                    <p class="description">Jefferson Mendoza es responsable del desarrollo de nuevas funcionalidades y la optimización de la plataforma Unirred.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal: Jorge L. -->
+    <div class="modal fade" id="jorgeLModal" tabindex="-1" role="dialog" aria-labelledby="jorgeLModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="jorgeLModalLabel">Jorge L.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.ibb.co/njR367Y/image.png" alt="Jorge L." class="profile-pic mb-3">
+                    <p><strong>Nombre:</strong> Jorge L.</p>
+                    <p><strong>Cargo:</strong> Director de Tecnología</p>
+                    <p class="description">Jorge L. supervisa el equipo de desarrollo y asegura la integridad tecnológica de Unirred.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal: Pixel Web -->
+    <div class="modal fade" id="pixelWebModal" tabindex="-1" role="dialog" aria-labelledby="pixelWebModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pixelWebModalLabel">Pixel Web</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.ibb.co/4gFT9gD/image.png" alt="Pixel Web" class="profile-pic mb-3">
+                    <p><strong>Nombre:</strong> Pixel Web</p>
+                    <p><strong>Cargo:</strong> Director de Marketing</p>
+                    <p class="description">Pixel Web es responsable de la estrategia de marketing y la gestión de la imagen pública de Unirred.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal: Genuini Company -->
+    <div class="modal fade" id="genuiniCompanyModal" tabindex="-1" role="dialog" aria-labelledby="genuiniCompanyModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="genuiniCompanyModalLabel">Genuini Company</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.ibb.co/7vGNh6D/image.png" alt="Genuini Company" class="profile-pic mb-3">
+                    <p><strong>Nombre:</strong> Genuini Company</p>
+                    <p><strong>Cargo:</strong> Especialista en SEO</p>
+                    <p class="description">Genuini Company se encarga de la optimización en motores de búsqueda para mejorar la visibilidad de Unirred.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal: Denis Polinar -->
+    <div class="modal fade" id="denisPolinarModal" tabindex="-1" role="dialog" aria-labelledby="denisPolinarModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="denisPolinarModalLabel">Denis Polinar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.ibb.co/zFffqKG/image.png" alt="Denis Polinar" class="profile-pic mb-3">
+                    <p><strong>Nombre:</strong> Denis Polinar</p>
+                    <p><strong>Cargo:</strong> Director General</p>
+                    <p class="description">Denis Polinar supervisa las operaciones generales de Unirred y coordina con todas las áreas.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal: Juan David -->
+    <div class="modal fade" id="juanDavidModal" tabindex="-1" role="dialog" aria-labelledby="juanDavidModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="juanDavidModalLabel">Juan David</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.ibb.co/sHHZXTY/image.png" alt="Juan David" class="profile-pic mb-3">
+                    <p><strong>Nombre:</strong> Juan David</p>
+                    <p><strong>Cargo:</strong> Asistente Administrativo</p>
+                    <p class="description">Juan David apoya en la administración y organización de los recursos de Unirred.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Función para abrir el desplegable basado en el fragmento de URL
+        document.addEventListener('DOMContentLoaded', function() {
+            var hash = window.location.hash;
+            if (hash) {
+                var target = document.querySelector(hash);
+                if (target) {
+                    // Abrir el desplegable
+                    $(target).collapse('show');
+                }
+            }
+
+            // Actualizar la URL cuando se abre un desplegable
+            $('.accordion-button').on('click', function() {
+                var targetId = $(this).attr('data-target');
+                if (window.history.replaceState) {
+                    window.history.replaceState(null, null, targetId);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
